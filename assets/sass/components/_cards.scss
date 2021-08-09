@@ -1,0 +1,168 @@
+:root {
+    --clr-neutral-900: hsl(201, 19%, 9%);
+    --clr-neutral-100: hsl(0, 0%, 100%);
+    --clr-accent-400: hsl(177, 100%, 63%);
+}
+
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    
+    grid-gap: 1rem;
+    
+    padding: 4rem;
+     .card-1 {
+         background-image: url("https://picsum.photos/200/200?random=1");
+     }
+
+     .card-2 {
+         background-image: url("https://picsum.photos/200/200?random=2");
+     }
+
+     .card-3 {
+         background-image: url("https://picsum.photos/200/200?random=3");
+     }
+
+     .card-4 {
+         background-image: url("https://picsum.photos/200/200?random=4");
+     }
+
+     .card-5 {
+         background-image: url("https://picsum.photos/200/200?random=5");
+     }
+
+     .card-6 {
+         background-image: url("https://picsum.photos/200/200?random=6");
+     }
+
+}
+
+   
+.gallery__card {
+    
+    color: var(--clr-neutral-100);
+    //background-image: url("https://picsum.photos/200/200?random=1");
+    background-size: cover;
+    background-position: center;
+    
+    padding: 22rem 0 0;
+
+
+    margin-bottom: 1rem;
+    max-width: 35ch;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    text-align: left;
+    transition: transform 500ms ease;
+    cursor: pointer;
+
+
+
+    /*Agregandole sombra atras*/
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.2);
+
+    &:hover,
+    &:focus-within {
+        transform: scale(1.05);
+        
+    }
+}
+
+
+
+
+.gallery__card-content {
+
+    padding: 2em;
+    background: linear-gradient(rgba(46, 54, 68, 0),
+            rgba(46, 54, 68, 0.5),
+            rgba(0, 0, 0, 0.795));
+    /*transform: translateY(65%);
+    transition: transform 500ms ease;*/
+
+}
+
+
+
+
+
+
+.gallery__card-title {
+
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        background: $accent;
+
+        transition: transform 500ms ease;
+    }
+}
+
+.gallery__card:hover .gallery__card-title::after,
+.gallery__card:focus-within .gallery__card-title::after {
+    transform: scaleX(1);
+}
+
+
+/*
+.gallery__button {
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-accent-400);
+    padding: 0.5rem 1.25rem;
+    border-radius: .25rem;
+
+    &:hover,
+    &:focus {
+        background-color: var(--clr-neutral-100);
+    }
+}
+*/
+
+
+@media (hover) {
+    .gallery__card-content {
+        transform: translateY(65%);
+        transition: transform 500ms ease;
+
+    }
+
+    .gallery__card:hover .gallery__card-content,
+    .gallery__card:focus-within .gallery__card-content {
+        transform: translateY(0);
+        transition-delay: 500ms;
+    }
+
+    .gallery__card:focus-within .gallery__card-content {
+        transition-duration: 0ms;
+    }
+
+    .gallery__card-content>*:not(.gallery__card-title) {
+        opacity: 0;
+        transition: opacity 500ms linear;
+    }
+
+    .gallery__card:hover .gallery__card-content>*:not(.gallery__card-title),
+    .gallery__card:focus-within .gallery__card-content>*:not(.gallery__card-title) {
+        opacity: 1;
+        transition-delay: 500ms;
+    }
+
+    .gallery__card-title::after {
+        transform: scaleX(0);
+    }
+}

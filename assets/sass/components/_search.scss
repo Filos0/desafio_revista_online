@@ -1,0 +1,113 @@
+//SEARCH BUTTON
+
+.search {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 60px;
+    //animation
+    transition: width 0.5s;
+    
+    //drop shadow
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.1);
+    overflow: hidden;
+
+    //Magnifier icon
+    .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 3px solid $accent;
+            border-radius: 50%;
+            transform: translate(-4px, -4px);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 12px;
+            background: $accent;
+            transform: translate(6px, 6px) rotate(315deg);
+        }
+    }
+
+    .input {
+        position: relative;
+        width: 300px;
+        height: 50px;
+        left: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+    }
+
+}
+
+//animation big search bar
+.search.active {
+    width: 20rem;
+}
+
+
+//clear button - clears input.
+.clear {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 15px;
+        background: #999;
+        transform: rotate(45deg);
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        height: 15px;
+        background: #999;
+        transform: rotate(315deg);
+    }
+}

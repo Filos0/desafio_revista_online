@@ -1,0 +1,70 @@
+.newsletter {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 15rem;
+    
+    background-color: $grey;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+    h1{
+        font-size:2rem;
+        margin-bottom: 0.5rem;
+    }
+    p{
+        font-size:1rem;
+        margin-bottom: 2rem;
+    }
+}
+.newsletter__form {
+    transition: transform 500ms ease;
+    
+   
+
+    &:hover,
+    &:focus-within {
+        transform: scale(1.05);
+    }
+
+
+    input{
+        border-width: 0;
+        font-size: 1.5rem;
+        width: 20rem;
+        padding: 5px 10px;
+        border-radius: 60px 0 0 60px;
+        outline: none;
+        border: 3px 0px 3px 3px solid transparent;
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.1);
+        //form will shrink its width in small screens 
+        @media screen and (max-width: 550px) {
+            width: 15rem;
+        }
+        @media screen and (max-width: 455px) {
+            width: 10rem;
+        }
+        @media screen and (max-width: 320px) {
+            width: 5rem;
+        }
+
+    }
+    button {
+        border-width: 0;
+        color: $white;
+        background-color: $accent;
+        font-size: 1.5rem;
+        padding: 5px 10px;
+        border-radius: 0 60px 60px 0;
+        border: 3px 3px 3px 0px solid transparent;
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.1);
+    }
+}
+
+

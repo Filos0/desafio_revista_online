@@ -1,0 +1,167 @@
+//Navigation bar /fixed /responsive in small screens
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    //background-color: rgb(207, 207, 207);
+    background-color: $black;
+    
+}
+
+.navbar__logo {
+    color: white;
+    cursor: pointer;
+    padding-left: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 1.5rem;
+    .navbar__logo-text{
+        
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            top: 1px;
+            right: 3px;
+            width: 1px;
+            height: 95%;
+            border-right: 2px solid $accent;
+            animation: blink 0.7s linear 1s infinite both;
+        }
+
+    }
+}
+
+@keyframes blink{
+    0% {
+        opacity: 0%;
+    }
+    100%{
+        opacity: 100%;
+    }
+}
+//elements in navbar /links and searchbar
+.navbar__nav-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    
+
+    li {
+        list-style: none;
+         a {
+             color: white;
+             text-decoration: none;
+             letter-spacing: 2px;
+             font-size: 0.9rem;
+             transition: 0.2s;
+         }
+    }
+    
+    &:hover li a{
+        transform: scale(1.5);
+        opacity: 1;
+        filter: blur(5px);
+    }
+    
+    li a:hover{
+        transform: scale(2);
+        opacity: 1;
+        filter: blur(0);
+    }
+ 
+}
+
+
+//burger button
+.navbar__burger {
+    display: none;
+    cursor: pointer;
+
+    div{
+        width: 25px;
+        height: 3px;
+        background-color: $accent;
+        margin: 5px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+}
+
+//Responsiveness in laptops, tablets and smartphones
+@media screen and (max-width: 1024px) {
+    .navbar__nav-links {
+        width: 60%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navbar__nav-links {
+        position: absolute;
+        right: 0px;
+        height: 100vh;
+        top: 7vh;
+        background-color: $black;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+        z-index: 1000;
+
+        li{
+            opacity: 0; 
+        }
+    }
+
+    .navbar__burger {
+        display: block;
+    }
+}
+
+
+@media screen and (max-width: 426px) {
+    .search.active{
+        width: 9rem;
+    }
+}
+.nav-active {
+    transform: translateX(0%);
+}
+
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle{
+    .navbar__burger-line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .navbar__burger-line2 {
+        opacity: 0;
+    }
+    .navbar__burger-line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}

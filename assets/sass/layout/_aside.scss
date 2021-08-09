@@ -1,0 +1,81 @@
+.main__aside {
+    
+    position: relative;
+    background: $white;
+    padding: 4rem;
+    
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 20px;
+    }
+     
+    //on tablet and smaller will not display sidebar
+    @media screen and (max-width:768px) {
+        display: none;
+
+    }
+}
+
+.main__aside-heading {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+.main__aside-tags {
+    margin-top: 40px;
+
+    
+    ul {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        li {
+            list-style: none;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    }
+}
+
+.main__aside-highlights {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    .main__aside-highlights__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+        p{
+            margin-top: 30px;
+            margin-bottom: 0px;
+        }
+
+        img {
+        width: 220px;
+        height: 200px;
+        margin: 10px;
+        border-radius: 2rem;
+        border: 2px solid transparent;
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.2);
+        transition: transform 500ms ease;
+        cursor: pointer;
+
+            &:hover,
+            &:focus-within {
+            transform: scale(1.05);
+            }
+        
+        }
+    }
+}
