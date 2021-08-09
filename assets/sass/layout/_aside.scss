@@ -18,6 +18,28 @@
     }
 }
 
+.main__aside-title{
+
+    position: relative;
+    width: max-content;
+    max-width: 100%;
+
+
+    &::after{
+        content: '';
+        position: absolute;
+        height: 4px;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background: $accent;
+        
+    }
+}
+
+
+
+
 .main__aside-heading {
     position: relative;
     display: flex;
@@ -28,18 +50,23 @@
 }
 
 .main__aside-tags {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-top: 40px;
 
     
     ul {
         position: relative;
         display: flex;
-        justify-content: space-around;
+        
+        justify-content: center;
         align-items: center;
 
         li {
             list-style: none;
-            margin: 10px 0;
+            margin: 10px 10px;
             cursor: pointer;
         }
     }
@@ -48,6 +75,10 @@
 .main__aside-highlights {
     margin-top: 50px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .main__aside-highlights__item {
         display: flex;
         flex-direction: column;
